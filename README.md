@@ -6,7 +6,7 @@ pasta src ->  API
 
 banco de dados utilizado -> MONGOLDB
 
-login autenticado usando jwt
+
 
 tecnologias utilizadas
   .React.js
