@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter ,Switch , Route } from 'react-router-dom';
 
 
-// IMPORTS ADMIN
+//  ADMIN
 import Dashboard from './pages/admin/dashboard';
 
 import Produtos from './pages/admin/produtos';
@@ -15,10 +15,12 @@ import UsuariosEditar from './pages/admin/usuarios/usuarios.editar';
 import UsuariosCadastrar from './pages/admin/usuarios/usuarios.cadastrar';
 
 
-// IMPORTS CLIENT
+//  CLIENT
 import Home from './pages/client/home';
 import ProdutoDetails from './pages/client/produtos/produtos.details';
 
+//  LOGIN
+import Login from './pages/admin/login';
 
 export default function Routes(){
     return(
@@ -30,7 +32,8 @@ export default function Routes(){
         
                 {/*Rotas Admin */}
                 <Route path="/admin" exact component={Dashboard} />
-                
+                <Route path="/admin/login" exact component={Login} />
+
                     {/*Rotas Produtos */}
                 <Route path="/admin/produtos" exact component={Produtos} />
                 <Route path="/admin/produtos/cadastrar" exact component={ProdutosCadastrar} />

@@ -13,7 +13,7 @@ const DataSchema = new mongoose.Schema({
 
 //função para criptografar a senha
 
-DataSchema.pre('save', function(next){
+DataSchema.pre('save',function(next){
     if(!this.isModified("senha_usuario")){
         return next();
     }
@@ -21,15 +21,25 @@ DataSchema.pre('save', function(next){
     next();
 });
 
-
-DataSchema.pre('findByIdOneUpdate',function(next){
+DataSchema.pre('findOneAndUpdate', function (next){
     var password = this.getUpdate().senha_usuario+'';
-    if(password.lenght<55){
+    if(password.length<55){
         this.getUpdate().senha_usuario = bcrypt.hashSync(password,10);
-
     }
     next();
-})
+});
+
+
+
+DataSchema.methods.isCorrectPassword = function (password, callback ){
+    bcrypt.compare(password,this.senha_usuario,function(err,same){
+        if(err){
+            callback(err);
+        }else{
+            callback(err, same);
+        }
+    })
+}
 
 const usuarios = mongoose.model('Usuarios', DataSchema);
 module.exports = usuarios;

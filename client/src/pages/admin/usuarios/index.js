@@ -111,7 +111,7 @@ function Listagem() {
                                 </TableCell>
                               </TableRow>
                             ))}
-                          </TableBody>
+                          </TableBody> 
                         </Table>
                       </TableContainer>
                     </Grid>
