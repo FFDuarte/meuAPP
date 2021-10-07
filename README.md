@@ -1,12 +1,12 @@
 npm run dev -> PARA INICIAR  O PROJETO
 
-pastar client -> SISTEMA PRINCIPAL
+pasta client -> SISTEMA PRINCIPAL
 
 pasta src ->  API 
 
 banco de dados utilizado -> MONGOLDB
 
-login autenticado usando jwt
+
 
 tecnologias utilizadas
   .React.js
