@@ -68,6 +68,30 @@ module.exports = {
                 })
             } 
         })
+    },
+    async checkToken(req,res){
+        const token = req.body.token || req.query.token || req.cookies.token || req.headers['x-access-token'];
+        if(!token){
+            res.json({status:401, msg:'não autorizado: token inexistente'});
+        }else{
+            jwt.verify(token, secrete, function(err,decoded){
+                if(err){
+                    req.json({status:401, msg:'não autorizado: token invalido'})
+                }else{
+                    res.json({status:200})
+                }
+            })
+        }
+    },
+    async destroyToken(req,res){
+        const token = req.headers.token;
+        if(token){
+            res.cookie('token',null,{httpOnly:true});
+        }else{
+            res.status(401).send("Logout não autorizado!")
+        }
+        res.send("Sessão finalizada com sucesso!");
     }
+
 
 } 

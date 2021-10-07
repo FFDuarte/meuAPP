@@ -10,8 +10,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
 import MuiAppBar from '@mui/material/AppBar';
 import { styled  } from '@mui/material/styles';
-
-
+import { getNomeUsuario } from '../services/auth';
+import logoSistema from '../assets/img/minhalogo.png'
 
 
 export default function MenuAdmin({title}){
@@ -99,7 +99,8 @@ export default function MenuAdmin({title}){
             >
               {title}
             </Typography>
-          
+            {
+             getNomeUsuario()}
           </Toolbar>
         </AppBar>
         
@@ -112,6 +113,7 @@ export default function MenuAdmin({title}){
             px: [1],
           }}
         >
+          <img style={{width:120, height:75}} src={logoSistema} alt="Logo Sistema" />
           <IconButton onClick={toggleDrawer}>
             <ChevronLeftIcon />
           </IconButton>

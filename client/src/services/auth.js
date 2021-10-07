@@ -15,4 +15,4 @@ export const getNomeUsuario = () =>  localStorage.clear(NOME_USUARIO);
 export const setUserType = tipo => { localStorage.setItem(USER_TYPE,tipo); };
 export const getUserType = () => localStorage.clear(USER_TYPE);
 
-
+export const getToken = () => localStorage.getItem(TOKEN_KEY)

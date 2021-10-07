@@ -22,6 +22,9 @@ import ProdutoDetails from './pages/client/produtos/produtos.details';
 //  LOGIN
 import Login from './pages/admin/login';
 
+import PrivateRoute from './services/wAuth';
+
+
 export default function Routes(){
     return(
         <BrowserRouter>
