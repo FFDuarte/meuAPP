@@ -1,3 +1,6 @@
+Sistema de cadastro de usarios e produtos com autenticação de login
+
+
 npm run dev -> PARA INICIAR  O PROJETO
 
 pasta client -> SISTEMA PRINCIPAL
