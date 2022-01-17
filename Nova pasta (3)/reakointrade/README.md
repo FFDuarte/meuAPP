@@ -1,5 +1,12 @@
 # Getting Started with Create React App
 
+#rodar antes de começar 
+    npm install @mui/material @emotion/react @emotion/styled
+
+    npm install @mui/icons-material
+
+    
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
